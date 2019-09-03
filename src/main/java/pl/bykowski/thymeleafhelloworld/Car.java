@@ -2,8 +2,8 @@ package pl.bykowski.thymeleafhelloworld;
 
 public class Car {
 
-    private String model;
     private String mark;
+    private String model;
 
     public Car(String mark, String model) {
         this.mark = mark;
@@ -27,5 +27,13 @@ public class Car {
 
     public void setMark(String mark) {
         this.mark = mark;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "mark='" + mark + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
 }

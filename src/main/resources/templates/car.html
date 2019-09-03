@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,11 +9,16 @@
 <p>Hello World!</p>
 
 <tr th:each="car: ${cars}">
-    <td th:text="${car.getMark()}"/><br>
-    <td th:text="${car.getModel()}"/><br>
+    <td th:text="${car.getMark()}"></td><br>
+    <td th:text="${car.getModel()}"></td><br>
     <p>=================</p>
 </tr>
 
+<form th:action="@{/add-car}" th:object="${newCar}" method="post">
+    <p>Model: <input type="text" th:field="*{model}"></p>
+    <p>Mark: <input type="text" th:field="*{mark}"></p>
+    <p><input type="submit" value="add new car"></p>
+</form>
 
 </body>
 </html>
